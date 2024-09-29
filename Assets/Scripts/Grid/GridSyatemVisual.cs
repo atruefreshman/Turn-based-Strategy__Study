@@ -93,6 +93,14 @@ public class GridSyatemVisual : MonoBehaviour
                     gridVisualColor = GridVisualColor.Red;
                     ShowShootRange(shootAction.unit.gridPosition,shootAction.MaxShootDistance,GridVisualColor.RedSoft);
                     break;
+                case SwordAction swordAction:
+                    gridVisualColor = GridVisualColor.Red;
+                    ShowSwordRange(swordAction.unit.gridPosition,swordAction.MaxSwordDistance,GridVisualColor.RedSoft);
+                    break;
+                case GrenadeAction grenadeAction:
+                    gridVisualColor = GridVisualColor.Red;
+                    ShowShootRange(grenadeAction.unit.gridPosition,grenadeAction.MaxThrowDistance,GridVisualColor.Yellow);
+                    break;
                 case SpinAction spinAction:
                     gridVisualColor = GridVisualColor.Blue;
                     break;
@@ -102,7 +110,7 @@ public class GridSyatemVisual : MonoBehaviour
         }
     }
 
-    public void ShowShootRange(GridPosition gridPosition,int range, GridVisualColor color) 
+    private void ShowShootRange(GridPosition gridPosition,int range, GridVisualColor color) 
     {
         for (int x =-range;x<= range;x++) 
         {
@@ -114,6 +122,22 @@ public class GridSyatemVisual : MonoBehaviour
                     continue;
 
                 if (!LevelGrid.Instance.IsValidGridPosition(testPosition)||LevelGrid.Instance.HasAnyUnitOn(testPosition))
+                    continue;
+
+                gridSyatemVisualSingleArray[testPosition.x, testPosition.z].Show(ColorToMateria(color));
+            }
+        }
+    }
+
+    private void ShowSwordRange(GridPosition gridPosition, int range, GridVisualColor color) 
+    {
+        for (int x = -range; x <= range; x++)
+        {
+            for (int z = -range; z <= range; z++)
+            {
+                GridPosition testPosition = new GridPosition(gridPosition.x + x, gridPosition.z + z);
+
+                if (!LevelGrid.Instance.IsValidGridPosition(testPosition) || LevelGrid.Instance.HasAnyUnitOn(testPosition))
                     continue;
 
                 gridSyatemVisualSingleArray[testPosition.x, testPosition.z].Show(ColorToMateria(color));

@@ -20,6 +20,12 @@ public class ScreenShake : MonoBehaviour
     {
         ShootAction.OnAnyShootEvent += ShootAction_OnAnyShootEvent;
         GrenadeProjectile.OnAnyGrenadeExploedEvent += GrenadeProjectile_OnAnyGrenadeExploedEvent;
+        SwordAction.OnAnySwordHitEvent += SwordAction_OnAnySwordHit;
+    }
+
+    private void SwordAction_OnAnySwordHit()
+    {
+        Shake(2f);
     }
 
     private void GrenadeProjectile_OnAnyGrenadeExploedEvent()

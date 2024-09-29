@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(UnitAnimator))]
-[RequireComponent(typeof(MoveAction))]
-[RequireComponent(typeof(SpinAction))]
-[RequireComponent(typeof(ShootAction))]
-[RequireComponent(typeof(GrenadeAction))]
-[RequireComponent(typeof(HealthSystem))]
-[RequireComponent(typeof(UnitRagdollSpawner))]
+//[RequireComponent(typeof(UnitAnimator))]
+//[RequireComponent(typeof(MoveAction))]
+//[RequireComponent(typeof(SpinAction))]
+//[RequireComponent(typeof(ShootAction))]
+//[RequireComponent(typeof(SwordAction))]
+//[RequireComponent(typeof(GrenadeAction))]
+//[RequireComponent(typeof(HealthSystem))]
+//[RequireComponent(typeof(UnitRagdollSpawner))]
 public class Unit : MonoBehaviour
 {
     public event Action OnActionPointChangedEvent;

@@ -77,7 +77,7 @@ PrefabInstance:
         type: 3}
       propertyPath: ragdollPrefab
       value: 
-      objectReference: {fileID: 595567547463174815, guid: 4962b1eee313c5d42b24273b5d6da593,
+      objectReference: {fileID: 595567547463174815, guid: 7ff2a58a8b43aa5459ef162d1531b1d5,
         type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
